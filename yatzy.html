@@ -501,6 +501,15 @@ points</strong>.</li>
 </div>
 </div>
 <script>
+// STATS-FETCHER-START
+fetch('https://www.chromebooker.com/stats/visitors.php', {
+method: 'POST',
+headers: {
+'Content-Type': 'application/json'
+},
+body: JSON.stringify({ page: window.location.href })
+});
+// STATS-FETCHER-END
 document.addEventListener('DOMContentLoaded', () => {
 const ROLLS_PER_TURN = 3;
 const UPPER_SECTION_BONUS_THRESHOLD = 63;
