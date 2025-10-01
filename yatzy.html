@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Yatzy</title>
-<meta name="author" content="Johnny Heggelund">
-<link rel="icon" type="image/x-icon" href="favicon.ico">
+<title>Yatzy Dice Game Online</title>
+<meta name="description" content="Play this classic dice game online for free in your browser against 3 AI opponents.">
+<meta name="author" content="AI Girl & Bossman">
+<meta name="robots" content="index, follow">
 <style>
 :root {
 --bg-color: #1a1a2e;
@@ -184,111 +185,27 @@ background-color: var(--dice-dot);
 border-radius: 50%;
 position: absolute;
 }
-.dice[data-value="1"] .dot:nth-child(1) {
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-}
-.dice[data-value="2"] .dot:nth-child(1) {
-top: 25%;
-left: 25%;
-transform: translate(-50%, -50%);
-}
-.dice[data-value="2"] .dot:nth-child(2) {
-top: 75%;
-left: 75%;
-transform: translate(-50%, -50%);
-}
-.dice[data-value="3"] .dot:nth-child(1) {
-top: 25%;
-left: 25%;
-transform: translate(-50%, -50%);
-}
-.dice[data-value="3"] .dot:nth-child(2) {
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-}
-.dice[data-value="3"] .dot:nth-child(3) {
-top: 75%;
-left: 75%;
-transform: translate(-50%, -50%);
-}
-.dice[data-value="4"] .dot:nth-child(1) {
-top: 25%;
-left: 25%;
-transform: translate(-50%, -50%);
-}
-.dice[data-value="4"] .dot:nth-child(2) {
-top: 25%;
-left: 75%;
-transform: translate(-50%, -50%);
-}
-.dice[data-value="4"] .dot:nth-child(3) {
-top: 75%;
-left: 25%;
-transform: translate(-50%, -50%);
-}
-.dice[data-value="4"] .dot:nth-child(4) {
-top: 75%;
-left: 75%;
-transform: translate(-50%, -50%);
-}
-.dice[data-value="5"] .dot:nth-child(1) {
-top: 25%;
-left: 25%;
-transform: translate(-50%, -50%);
-}
-.dice[data-value="5"] .dot:nth-child(2) {
-top: 25%;
-left: 75%;
-transform: translate(-50%, -50%);
-}
-.dice[data-value="5"] .dot:nth-child(3) {
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-}
-.dice[data-value="5"] .dot:nth-child(4) {
-top: 75%;
-left: 25%;
-transform: translate(-50%, -50%);
-}
-.dice[data-value="5"] .dot:nth-child(5) {
-top: 75%;
-left: 75%;
-transform: translate(-50%, -50%);
-}
-.dice[data-value="6"] .dot:nth-child(1) {
-top: 25%;
-left: 25%;
-transform: translate(-50%, -50%);
-}
-.dice[data-value="6"] .dot:nth-child(2) {
-top: 50%;
-left: 25%;
-transform: translate(-50%, -50%);
-}
-.dice[data-value="6"] .dot:nth-child(3) {
-top: 75%;
-left: 25%;
-transform: translate(-50%, -50%);
-}
-.dice[data-value="6"] .dot:nth-child(4) {
-top: 25%;
-left: 75%;
-transform: translate(-50%, -50%);
-}
-.dice[data-value="6"] .dot:nth-child(5) {
-top: 50%;
-left: 75%;
-transform: translate(-50%, -50%);
-}
-.dice[data-value="6"] .dot:nth-child(6) {
-top: 75%;
-left: 75%;
-transform: translate(-50%, -50%);
-}
+.dice[data-value="1"] .dot:nth-child(1) { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.dice[data-value="2"] .dot:nth-child(1) { top: 25%; left: 25%; transform: translate(-50%, -50%); }
+.dice[data-value="2"] .dot:nth-child(2) { top: 75%; left: 75%; transform: translate(-50%, -50%); }
+.dice[data-value="3"] .dot:nth-child(1) { top: 25%; left: 25%; transform: translate(-50%, -50%); }
+.dice[data-value="3"] .dot:nth-child(2) { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.dice[data-value="3"] .dot:nth-child(3) { top: 75%; left: 75%; transform: translate(-50%, -50%); }
+.dice[data-value="4"] .dot:nth-child(1) { top: 25%; left: 25%; transform: translate(-50%, -50%); }
+.dice[data-value="4"] .dot:nth-child(2) { top: 25%; left: 75%; transform: translate(-50%, -50%); }
+.dice[data-value="4"] .dot:nth-child(3) { top: 75%; left: 25%; transform: translate(-50%, -50%); }
+.dice[data-value="4"] .dot:nth-child(4) { top: 75%; left: 75%; transform: translate(-50%, -50%); }
+.dice[data-value="5"] .dot:nth-child(1) { top: 25%; left: 25%; transform: translate(-50%, -50%); }
+.dice[data-value="5"] .dot:nth-child(2) { top: 25%; left: 75%; transform: translate(-50%, -50%); }
+.dice[data-value="5"] .dot:nth-child(3) { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.dice[data-value="5"] .dot:nth-child(4) { top: 75%; left: 25%; transform: translate(-50%, -50%); }
+.dice[data-value="5"] .dot:nth-child(5) { top: 75%; left: 75%; transform: translate(-50%, -50%); }
+.dice[data-value="6"] .dot:nth-child(1) { top: 25%; left: 25%; transform: translate(-50%, -50%); }
+.dice[data-value="6"] .dot:nth-child(2) { top: 50%; left: 25%; transform: translate(-50%, -50%); }
+.dice[data-value="6"] .dot:nth-child(3) { top: 75%; left: 25%; transform: translate(-50%, -50%); }
+.dice[data-value="6"] .dot:nth-child(4) { top: 25%; left: 75%; transform: translate(-50%, -50%); }
+.dice[data-value="6"] .dot:nth-child(5) { top: 50%; left: 75%; transform: translate(-50%, -50%); }
+.dice[data-value="6"] .dot:nth-child(6) { top: 75%; left: 75%; transform: translate(-50%, -50%); }
 .game-btn {
 width: 100%;
 padding: 15px;
@@ -421,7 +338,7 @@ margin-bottom: 0;
 <div class="top-panel-info">
 <p id="game-mode-display"></p>
 </div>
-<button id="rules-btn" class="game-btn secondary">Rules</button>
+<button id="rules-btn" class="game-btn secondary"></button>
 </div>
 <div class="main-content">
 <div class="scoreboard-container">
@@ -430,87 +347,113 @@ margin-bottom: 0;
 </div>
 <div class="control-panel">
 <div class="player-info">
-<h2 id="current-player-name">Player's turn</h2>
-<p id="rolls-left">Rolls left: 3</p>
+<h2 id="current-player-name"></h2>
+<p id="rolls-left"></p>
 </div>
 <div class="dice-area">
 <div class="dice-container" id="dice-container">
 </div>
 </div>
 <div class="game-controls">
-<button id="roll-btn" class="game-btn">Roll Dice</button>
-<button id="confirm-btn" class="game-btn" style="display: none;">Confirm Dice</button>
+<button id="roll-btn" class="game-btn"></button>
+<button id="confirm-btn" class="game-btn" style="display: none;"></button>
 </div>
 </div>
 </div>
 </div>
 <div id="start-modal" class="modal-overlay">
 <div class="modal-content">
-<h2>Welcome to Yatzy Dice Game Online</h2>
-<p>Select game mode:</p>
+<h2 id="welcome-title"></h2>
+<p id="mode-select-text"></p>
 <div class="modal-buttons">
-<button id="free-mode-btn" class="game-btn">Free Choice</button>
-<button id="forced-mode-btn" class="game-btn">Forced Order</button>
+<button id="free-mode-btn" class="game-btn"></button>
+<button id="forced-mode-btn" class="game-btn"></button>
 </div>
 </div>
 </div>
 <div id="game-over-modal" class="modal-overlay">
 <div class="modal-content">
-<h2 id="game-over-title">Game Over!</h2>
+<h2 id="game-over-title"></h2>
 <p id="game-over-winner"></p>
 <div class="modal-buttons">
-<button id="play-again-btn" class="game-btn">Play Again</button>
+<button id="play-again-btn" class="game-btn"></button>
 </div>
 </div>
 </div>
 <div id="rules-modal" class="modal-overlay">
 <div class="modal-content rules-content">
-<h2>How to Play Yatzy</h2>
-<p>The goal is to score the most points by rolling five dice to make specific combinations.</p>
-<h2>Gameplay</h2>
-<ul>
-<li>On your turn, you can roll the dice up to <strong>3 times</strong>.</li>
-<li>After the first and second roll, you can click dice to "hold" them. Held dice will not be rolled
-again.</li>
-<li>After your rolls, choose an available slot on the scoreboard to place your score.</li>
-</ul>
-<h2>Scoring: Upper Section</h2>
-<ul>
-<li><strong>Ones to Sixes:</strong> Get the sum of dice showing that number. For example, three 4s in
-the "Fours" slot gives 12 points.</li>
-<li><strong>Bonus:</strong> If the upper section total is <strong>63 or more</strong>, you get a
-<strong>bonus of 50 points</strong>.
-</li>
-</ul>
-<h2>Scoring: Lower Section</h2>
-<ul>
-<li><strong>3 and 4 of a kind:</strong> At least 3 or 4 dice with the same number. Gives the sum of all
-5 dice as points.</li>
-<li><strong>Full House:</strong> Three of one number and a pair (e.g. 4, 4, 4, 2, 2). Gives <strong>25
-points</strong>.</li>
-<li><strong>Small straight:</strong> Four dice in sequence (e.g. 1-2-3-4). Gives <strong>30
-points</strong>.</li>
-<li><strong>Large straight:</strong> Five dice in sequence (e.g. 1-2-3-4-5). Gives <strong>40
-points</strong>.</li>
-<li><strong>Yatzy:</strong> All five dice are the same. Gives <strong>50 points</strong>.</li>
-<li><strong>Chance:</strong> Any combination. Gives the sum of all 5 dice as points.</li>
-</ul>
+<h2 id="rules-how-to-title"></h2>
+<p id="rules-goal-text"></p>
+<h2 id="rules-gameplay-title"></h2>
+<ul id="rules-gameplay-list"></ul>
+<h2 id="rules-scoring-upper-title"></h2>
+<ul id="rules-scoring-upper-list"></ul>
+<h2 id="rules-scoring-lower-title"></h2>
+<ul id="rules-scoring-lower-list"></ul>
 <div class="modal-buttons">
-<button id="close-rules-btn" class="game-btn">Got it!</button>
+<button id="close-rules-btn" class="game-btn"></button>
 </div>
 </div>
 </div>
 <script>
-// STATS-FETCHER-START
-fetch('https://www.chromebooker.com/stats/visitors.php', {
-method: 'POST',
-headers: {
-'Content-Type': 'application/json'
-},
-body: JSON.stringify({ page: window.location.href })
-});
-// STATS-FETCHER-END
 document.addEventListener('DOMContentLoaded', () => {
+const lang = {
+title: "Yatzy",
+rules: "Rules",
+mode: "Mode",
+freeChoice: "Free Choice",
+forcedOrder: "Forced Order",
+playersTurn: "'s Turn",
+rollsLeft: "Rolls Left",
+rollDice: "Roll Dice",
+confirmDice: "Finish Rolling",
+chooseOnBoard: "Choose on the scoreboard!",
+category: "Category",
+ones: "Ones",
+twos: "Twos",
+threes: "Threes",
+fours: "Fours",
+fives: "Fives",
+sixes: "Sixes",
+bonus: "Bonus",
+upperTotal: "Upper Total",
+threeOfAKind: "Three of a Kind",
+fourOfAKind: "Four of a Kind",
+fullHouse: "Full House",
+smallStraight: "Small Straight",
+largeStraight: "Large Straight",
+yatzy: "Yatzy",
+chance: "Chance",
+lowerTotal: "Lower Total",
+grandTotal: "GRAND TOTAL",
+welcomeTitle: "Welcome to Yatzy Online!",
+modeSelectText: "Select game mode:",
+gameOverTitle: "Game Over!",
+winnerIs: "is the winner!",
+withScore: "With a score of",
+playAgain: "Play Again",
+rulesHowToTitle: "How to Play Yatzy",
+rulesGoalText: "The goal is to score the most points by rolling five dice to make certain combinations.",
+rulesGameplayTitle: "Gameplay",
+rulesGameplay1: "On your turn, you can roll the dice up to <strong>3 times</strong>.",
+rulesGameplay2: "After the first and second roll, you can click on dice to 'hold' them. Held dice will not be re-rolled.",
+rulesGameplay3: "After your rolls, you must choose an available category on the scoreboard to place your score.",
+rulesScoringUpperTitle: "Scoring: Upper Section",
+rulesScoringUpper1: "<strong>Ones to Sixes:</strong> Get the sum of the dice showing that number. For example, three 4s in the 'Fours' category scores 12 points.",
+rulesScoringUpper2: "<strong>Bonus:</strong> If the total of the upper section is <strong>63 or more</strong>, you get a <strong>50 point bonus</strong>.",
+rulesScoringLowerTitle: "Scoring: Lower Section",
+rulesScoringLower1: "<strong>3 & 4 of a Kind:</strong> At least 3 or 4 dice with the same value. Scores the sum of all 5 dice.",
+rulesScoringLower2: "<strong>Full House:</strong> Three of a kind and a pair (e.g., 4, 4, 4, 2, 2). Scores <strong>25 points</strong>.",
+rulesScoringLower3: "<strong>Small Straight:</strong> Four dice in a sequence (e.g., 1-2-3-4). Scores <strong>30 points</strong>.",
+rulesScoringLower4: "<strong>Large Straight:</strong> Five dice in a sequence (e.g., 1-2-3-4-5). Scores <strong>40 points</strong>.",
+rulesScoringLower5: "<strong>Yatzy:</strong> All five dice are the same. Scores <strong>50 points</strong>.",
+rulesScoringLower6: "<strong>Chance:</strong> Any combination. Scores the sum of all 5 dice.",
+rulesGotIt: "Got It!",
+playerYou: "You",
+playerRobby: "Robby",
+playerProfessor: "The Professor",
+playerThinker: "The Thinker"
+};
 const ROLLS_PER_TURN = 3;
 const UPPER_SECTION_BONUS_THRESHOLD = 63;
 const UPPER_SECTION_BONUS_POINTS = 50;
@@ -520,10 +463,10 @@ const SCORE_FOR_LARGE_STRAIGHT = 40;
 const SCORE_FOR_YATZY = 50;
 const AI_THINKING_TIME = 1000;
 const PLAYERS_CONFIG = [
-{ name: 'You', emoji: '🧑‍💻', isAI: false },
-{ name: 'Robby', emoji: '🤖', isAI: true },
-{ name: 'Professor', emoji: '🧐', isAI: true },
-{ name: 'Thinker', emoji: '🤔', isAI: true }
+{ name: lang.playerYou, emoji: '🧑‍💻', isAI: false },
+{ name: lang.playerRobby, emoji: '🤖', isAI: true },
+{ name: lang.playerProfessor, emoji: '🧐', isAI: true },
+{ name: lang.playerThinker, emoji: '🤔', isAI: true }
 ];
 const scoreboardEl = document.getElementById('scoreboard');
 const diceContainerEl = document.getElementById('dice-container');
@@ -542,15 +485,47 @@ const forcedModeBtn = document.getElementById('forced-mode-btn');
 const playAgainBtn = document.getElementById('play-again-btn');
 let state = {};
 const SCORE_CATEGORIES = [
-{ id: 'ones', name: 'Ones', value: 1, section: 'upper' }, { id: 'twos', name: 'Twos', value: 2, section: 'upper' }, { id: 'threes', name: 'Threes', value: 3, section: 'upper' },
-{ id: 'fours', name: 'Fours', value: 4, section: 'upper' }, { id: 'fives', name: 'Fives', value: 5, section: 'upper' }, { id: 'sixes', name: 'Sixes', value: 6, section: 'upper' },
-{ id: 'upperBonus', name: 'Bonus', isBonus: true }, { id: 'upperTotal', name: 'Upper Total', isTotal: true },
-{ id: 'threeOfAKind', name: 'Three of a Kind', section: 'lower' }, { id: 'fourOfAKind', name: 'Four of a Kind', section: 'lower' },
-{ id: 'fullHouse', name: 'Full House', section: 'lower' }, { id: 'smallStraight', name: 'Small Straight', section: 'lower' },
-{ id: 'largeStraight', name: 'Large Straight', section: 'lower' }, { id: 'yatzy', name: 'Yatzy', section: 'lower' },
-{ id: 'chance', name: 'Chance', section: 'lower' }, { id: 'lowerTotal', name: 'Lower Total', isTotal: true },
-{ id: 'grandTotal', name: 'TOTAL', isTotal: true }
+{ id: 'ones', name: lang.ones, value: 1, section: 'upper' }, { id: 'twos', name: lang.twos, value: 2, section: 'upper' }, { id: 'threes', name: lang.threes, value: 3, section: 'upper' },
+{ id: 'fours', name: lang.fours, value: 4, section: 'upper' }, { id: 'fives', name: lang.fives, value: 5, section: 'upper' }, { id: 'sixes', name: lang.sixes, value: 6, section: 'upper' },
+{ id: 'upperBonus', name: lang.bonus, isBonus: true }, { id: 'upperTotal', name: lang.upperTotal, isTotal: true },
+{ id: 'threeOfAKind', name: lang.threeOfAKind, section: 'lower' }, { id: 'fourOfAKind', name: lang.fourOfAKind, section: 'lower' },
+{ id: 'fullHouse', name: lang.fullHouse, section: 'lower' }, { id: 'smallStraight', name: lang.smallStraight, section: 'lower' },
+{ id: 'largeStraight', name: lang.largeStraight, section: 'lower' }, { id: 'yatzy', name: lang.yatzy, section: 'lower' },
+{ id: 'chance', name: lang.chance, section: 'lower' }, { id: 'lowerTotal', name: lang.lowerTotal, isTotal: true },
+{ id: 'grandTotal', name: lang.grandTotal, isTotal: true }
 ];
+function updateStaticUIText() {
+document.title = lang.title;
+gameModeDisplayEl.textContent = `${lang.mode}:`;
+rulesBtn.textContent = lang.rules;
+rollBtn.textContent = lang.rollDice;
+document.getElementById('welcome-title').textContent = lang.welcomeTitle;
+document.getElementById('mode-select-text').textContent = lang.modeSelectText;
+freeModeBtn.textContent = lang.freeChoice;
+forcedModeBtn.textContent = lang.forcedOrder;
+document.getElementById('game-over-title').textContent = lang.gameOverTitle;
+playAgainBtn.textContent = lang.playAgain;
+document.getElementById('rules-how-to-title').textContent = lang.rulesHowToTitle;
+document.getElementById('rules-goal-text').textContent = lang.rulesGoalText;
+document.getElementById('rules-gameplay-title').textContent = lang.rulesGameplayTitle;
+document.getElementById('rules-gameplay-list').innerHTML = `
+<li>${lang.rulesGameplay1}</li>
+<li>${lang.rulesGameplay2}</li>
+<li>${lang.rulesGameplay3}</li>`;
+document.getElementById('rules-scoring-upper-title').textContent = lang.rulesScoringUpperTitle;
+document.getElementById('rules-scoring-upper-list').innerHTML = `
+<li>${lang.rulesScoringUpper1}</li>
+<li>${lang.rulesScoringUpper2}</li>`;
+document.getElementById('rules-scoring-lower-title').textContent = lang.rulesScoringLowerTitle;
+document.getElementById('rules-scoring-lower-list').innerHTML = `
+<li>${lang.rulesScoringLower1}</li>
+<li>${lang.rulesScoringLower2}</li>
+<li>${lang.rulesScoringLower3}</li>
+<li>${lang.rulesScoringLower4}</li>
+<li>${lang.rulesScoringLower5}</li>
+<li>${lang.rulesScoringLower6}</li>`;
+closeRulesBtn.textContent = lang.rulesGotIt;
+}
 function init() {
 state = {
 players: PLAYERS_CONFIG.map(p => ({ ...p, scores: {} })),
@@ -575,13 +550,13 @@ gameOverModal.classList.remove('visible');
 }
 function startGame(mode) {
 state.gameMode = mode;
-gameModeDisplayEl.textContent = `Mode: ${mode === 'free' ? 'Free Choice' : 'Forced Order'}`;
+gameModeDisplayEl.textContent = `${lang.mode}: ${mode === 'free' ? lang.freeChoice : lang.forcedOrder}`;
 startModal.classList.remove('visible');
 newTurn();
 }
 function setupBoard() {
 let headerHTML = '<thead><tr>';
-headerHTML += '<th>Category</th>';
+headerHTML += `<th>${lang.category}</th>`;
 state.players.forEach(p => headerHTML += `<th class="player-header">${p.emoji}</th>`);
 headerHTML += '</tr></thead>';
 let bodyHTML = '<tbody>';
@@ -622,19 +597,20 @@ diceContainerEl.appendChild(die);
 function updateUI() {
 const player = state.players[state.currentPlayerIndex];
 const isHuman = !player.isAI;
-currentPlayerNameEl.textContent = `${player.name}'s turn`;
+currentPlayerNameEl.textContent = `${player.name}${lang.playersTurn}`;
+rollsLeftEl.textContent = `${lang.rollsLeft}: ${state.rollsLeft}`;
 if (isHuman) {
 if (state.phase === 'rolling') {
 rollBtn.style.display = 'block';
 rollBtn.disabled = (state.rollsLeft === 0);
 confirmBtn.style.display = (state.rollsLeft < ROLLS_PER_TURN) ? 'block' : 'none';
 confirmBtn.disabled = false;
-confirmBtn.textContent = 'Confirm Dice';
+confirmBtn.textContent = lang.confirmDice;
 } else if (state.phase === 'scoring') {
 rollBtn.style.display = 'none';
 confirmBtn.style.display = 'block';
 confirmBtn.disabled = true;
-confirmBtn.textContent = 'Choose on the scoreboard!';
+confirmBtn.textContent = lang.chooseOnBoard;
 } else {
 rollBtn.style.display = 'block';
 rollBtn.disabled = true;
@@ -645,7 +621,6 @@ rollBtn.style.display = 'block';
 rollBtn.disabled = true;
 confirmBtn.style.display = 'none';
 }
-rollsLeftEl.textContent = `Rolls left: ${state.rollsLeft}`;
 document.querySelectorAll('.score-cell').forEach(cell => {
 const pIndex = parseInt(cell.dataset.player);
 const catId = cell.dataset.cat;
@@ -658,6 +633,9 @@ cell.classList.add('available');
 if (state.players[pIndex].scores[catId] !== null) {
 cell.classList.add('filled');
 cell.textContent = state.players[pIndex].scores[catId];
+} else {
+cell.classList.remove('filled');
+cell.textContent = '-';
 }
 });
 scoreboardEl.querySelectorAll('th, td').forEach(el => el.style.backgroundColor = '');
@@ -770,8 +748,8 @@ winner = p;
 }
 });
 gameOverModal.classList.add('visible');
-document.getElementById('game-over-title').textContent = `${winner.name} wins!`;
-document.getElementById('game-over-winner').textContent = `With a score of ${maxScore}!`;
+document.getElementById('game-over-title').textContent = `${winner.name} ${lang.winnerIs}`;
+document.getElementById('game-over-winner').textContent = `${lang.withScore} ${maxScore}!`;
 }
 function getNextForcedCategory(playerIndex) {
 const p = state.players[playerIndex];
@@ -1069,8 +1047,10 @@ if (e.target === rulesModal) {
 rulesModal.classList.remove('visible');
 }
 });
+updateStaticUIText();
 init();
 });
 </script>
+<script src="/stats/tracker.js" defer></script>
 </body>
 </html>
