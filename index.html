@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Yatzy Dice Game Online</title>
-<meta name="description" content="Play this classic dice game online for free in your browser against 3 AI opponents.">
+<title>Yatzy Terningspill</title>
+<meta name="description" content="Spill det klassiske terningspillet Yatzy gratis i nettleseren din mot 3 AI-motstandere.">
 <meta name="author" content="Johnny Heggelund">
-<link rel="icon" type="image/x-icon" href="favicon.ico">
+
 <style>
 :root {
 --bg-color: #1a1a2e;
@@ -106,10 +106,6 @@ cursor: pointer;
 border-radius: 5px;
 transition: background-color 0.2s;
 }
-.score-cell.available:hover {
-background-color: var(--secondary-color);
-color: var(--highlight-color);
-}
 .score-cell.filled {
 font-weight: bold;
 color: var(--highlight-color);
@@ -121,6 +117,23 @@ font-size: clamp(14px, 2.2vmin, 20px);
 color: var(--primary-color);
 border-top: 2px solid var(--primary-color);
 }
+@keyframes pulse-glow {
+    0% { box-shadow: 0 0 3px var(--highlight-color); }
+    50% { box-shadow: 0 0 12px 3px var(--highlight-color); }
+    100% { box-shadow: 0 0 3px var(--highlight-color); }
+}
+
+/* Alle klikkbare ruter får hover-effekt */
+.score-cell.available:hover {
+    background-color: var(--secondary-color);
+    color: var(--highlight-color);
+}
+
+/* Kun ruter som er forslag får den pulserende effekten */
+.score-cell.suggestion {
+    animation: pulse-glow 2s infinite ease-in-out;
+}
+
 .control-panel {
 display: flex;
 flex-direction: column;
@@ -399,60 +412,57 @@ margin-bottom: 0;
 document.addEventListener('DOMContentLoaded', () => {
 const lang = {
 title: "Yatzy",
-rules: "Rules",
-mode: "Mode",
-freeChoice: "Free Choice",
-forcedOrder: "Forced Order",
-playersTurn: "'s Turn",
-rollsLeft: "Rolls Left",
-rollDice: "Roll Dice",
-confirmDice: "Finish Rolling",
-chooseOnBoard: "Choose on the scoreboard!",
-category: "Category",
-ones: "Ones",
-twos: "Twos",
-threes: "Threes",
-fours: "Fours",
-fives: "Fives",
-sixes: "Sixes",
+rules: "Regler",
+mode: "Modus",
+freeChoice: "Fritt valg",
+forcedOrder: "Tvungen rekkefølge",
+rollsLeft: "Kast igjen",
+rollDice: "Kast terningene",
+confirmDice: "Fullfør kast",
+chooseOnBoard: "Velg på poengbrettet!",
+category: "Kategori",
+ones: "Enere",
+twos: "Toere",
+threes: "Treere",
+fours: "Firere",
+fives: "Femmere",
+sixes: "Seksere",
 bonus: "Bonus",
-upperTotal: "Upper Total",
-threeOfAKind: "Three of a Kind",
-fourOfAKind: "Four of a Kind",
-fullHouse: "Full House",
-smallStraight: "Small Straight",
-largeStraight: "Large Straight",
+upperTotal: "Sum øvre",
+threeOfAKind: "3 like",
+fourOfAKind: "4 like",
+fullHouse: "Hus",
+smallStraight: "Liten straight",
+largeStraight: "Stor straight",
 yatzy: "Yatzy",
-chance: "Chance",
-lowerTotal: "Lower Total",
-grandTotal: "GRAND TOTAL",
-welcomeTitle: "Welcome to Yatzy Online!",
-modeSelectText: "Select game mode:",
-gameOverTitle: "Game Over!",
-winnerIs: "is the winner!",
-withScore: "With a score of",
-playAgain: "Play Again",
-rulesHowToTitle: "How to Play Yatzy",
-rulesGoalText: "The goal is to score the most points by rolling five dice to make certain combinations.",
-rulesGameplayTitle: "Gameplay",
-rulesGameplay1: "On your turn, you can roll the dice up to <strong>3 times</strong>.",
-rulesGameplay2: "After the first and second roll, you can click on dice to 'hold' them. Held dice will not be re-rolled.",
-rulesGameplay3: "After your rolls, you must choose an available category on the scoreboard to place your score.",
-rulesScoringUpperTitle: "Scoring: Upper Section",
-rulesScoringUpper1: "<strong>Ones to Sixes:</strong> Get the sum of the dice showing that number. For example, three 4s in the 'Fours' category scores 12 points.",
-rulesScoringUpper2: "<strong>Bonus:</strong> If the total of the upper section is <strong>63 or more</strong>, you get a <strong>50 point bonus</strong>.",
-rulesScoringLowerTitle: "Scoring: Lower Section",
-rulesScoringLower1: "<strong>3 & 4 of a Kind:</strong> At least 3 or 4 dice with the same value. Scores the sum of all 5 dice.",
-rulesScoringLower2: "<strong>Full House:</strong> Three of a kind and a pair (e.g., 4, 4, 4, 2, 2). Scores <strong>25 points</strong>.",
-rulesScoringLower3: "<strong>Small Straight:</strong> Four dice in a sequence (e.g., 1-2-3-4). Scores <strong>30 points</strong>.",
-rulesScoringLower4: "<strong>Large Straight:</strong> Five dice in a sequence (e.g., 1-2-3-4-5). Scores <strong>40 points</strong>.",
-rulesScoringLower5: "<strong>Yatzy:</strong> All five dice are the same. Scores <strong>50 points</strong>.",
-rulesScoringLower6: "<strong>Chance:</strong> Any combination. Scores the sum of all 5 dice.",
-rulesGotIt: "Got It!",
-playerYou: "You",
+chance: "Sjanse",
+lowerTotal: "Sum nedre",
+grandTotal: "TOTALSUM",
+welcomeTitle: "Velkommen til Yatzy!",
+modeSelectText: "Velg spillmodus:",
+gameOverTitle: "Spillet er over!",
+playAgain: "Spill igjen",
+rulesHowToTitle: "Slik spiller du Yatzy",
+rulesGoalText: "Målet er å få flest poeng ved å kaste fem terninger for å lage bestemte kombinasjoner.",
+rulesGameplayTitle: "Spillforløp",
+rulesGameplay1: "På din tur kan du kaste terningene opptil <strong>3 ganger</strong>.",
+rulesGameplay2: "Etter første og andre kast kan du klikke på terninger for å 'holde' dem. Terninger du holder på, blir ikke kastet på nytt.",
+rulesGameplay3: "Etter kastene dine må du velge en ledig kategori på poengbrettet for å plassere poengsummen din.",
+rulesScoringUpperTitle: "Poeng: Øvre del",
+rulesScoringUpper1: "<strong>Enere til Seksere:</strong> Få summen av terningene som viser det tallet. For eksempel gir tre 4-ere i 'Firere'-kategorien 12 poeng.",
+rulesScoringUpper2: "<strong>Bonus:</strong> Hvis totalsummen av øvre del er <strong>63 eller mer</strong>, får du en <strong>bonus på 50 poeng</strong>.",
+rulesScoringLowerTitle: "Poeng: Nedre del",
+rulesScoringLower1: "<strong>3 & 4 like:</strong> Minst 3 eller 4 terninger med samme verdi. Gir summen av alle 5 terningene i poeng.",
+rulesScoringLower2: "<strong>Hus:</strong> Tre like og et par (f.eks. 4, 4, 4, 2, 2). Gir <strong>25 poeng</strong>.",
+rulesScoringLower3: "<strong>Liten straight:</strong> Fire terninger i rekkefølge (f.eks. 1-2-3-4). Gir <strong>30 poeng</strong>.",
+rulesScoringLower4: "<strong>Stor straight:</strong> Fem terninger i rekkefølge (f.eks. 1-2-3-4-5). Gir <strong>40 poeng</strong>.",
+rulesScoringLower5: "<strong>Yatzy:</strong> Alle fem terningene er like. Gir <strong>50 poeng</strong>.",
+rulesScoringLower6: "<strong>Sjanse:</strong> Hvilken som helst kombinasjon. Gir summen av alle 5 terningene i poeng.",
+rulesGotIt: "Skjønner!",
+playerYou: "Du",
 playerRobby: "Robby",
-playerProfessor: "The Professor",
-playerThinker: "The Thinker"
+playerProfessor: "Professoren",
+playerThinker: "Tenkeren"
 };
 const ROLLS_PER_TURN = 3;
 const UPPER_SECTION_BONUS_THRESHOLD = 63;
@@ -597,7 +607,7 @@ diceContainerEl.appendChild(die);
 function updateUI() {
 const player = state.players[state.currentPlayerIndex];
 const isHuman = !player.isAI;
-currentPlayerNameEl.textContent = `${player.name}${lang.playersTurn}`;
+currentPlayerNameEl.textContent = (player.name === lang.playerYou) ? 'Din tur' : `${player.name} sin tur`;
 rollsLeftEl.textContent = `${lang.rollsLeft}: ${state.rollsLeft}`;
 if (isHuman) {
 if (state.phase === 'rolling') {
@@ -624,11 +634,24 @@ confirmBtn.style.display = 'none';
 document.querySelectorAll('.score-cell').forEach(cell => {
 const pIndex = parseInt(cell.dataset.player);
 const catId = cell.dataset.cat;
-cell.classList.remove('available');
+// Nullstill klasser for forslag og tilgjengelighet
+cell.classList.remove('available', 'suggestion');
 if (pIndex === state.currentPlayerIndex && isHuman && state.phase === 'scoring' && state.players[pIndex].scores[catId] === null) {
-if (state.gameMode === 'free' || (getNextForcedCategory(pIndex) && getNextForcedCategory(pIndex).id === catId)) {
-cell.classList.add('available');
-}
+    if (state.gameMode === 'forced') {
+        if (getNextForcedCategory(pIndex) && getNextForcedCategory(pIndex).id === catId) {
+            cell.classList.add('available');
+            if (calculateScore(catId, state.dice) > 0) {
+                cell.classList.add('suggestion');
+            }
+        }
+    } else { // 'free' mode
+        // Alle tomme ruter er klikkbare (available) for strategisk plassering av null poeng
+        cell.classList.add('available');
+        // Men kun ruter som gir poeng får den pulserende 'suggestion'-effekten
+        if (calculateScore(catId, state.dice) > 0) {
+            cell.classList.add('suggestion');
+        }
+    }
 }
 if (state.players[pIndex].scores[catId] !== null) {
 cell.classList.add('filled');
@@ -748,8 +771,8 @@ winner = p;
 }
 });
 gameOverModal.classList.add('visible');
-document.getElementById('game-over-title').textContent = `${winner.name} ${lang.winnerIs}`;
-document.getElementById('game-over-winner').textContent = `${lang.withScore} ${maxScore}!`;
+document.getElementById('game-over-title').textContent = lang.gameOverTitle;
+document.getElementById('game-over-winner').textContent = `Vinneren er ${winner.name} med ${maxScore} poeng!`;
 }
 function getNextForcedCategory(playerIndex) {
 const p = state.players[playerIndex];
