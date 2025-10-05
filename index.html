@@ -2,10 +2,14 @@
 <html lang="no">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Yatzy Terningspill</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1e1e1e">
+<title>Spill Yatzy Online</title>
+<meta name="description" content="Spill det velkjente terningspillet Yatzy mot 3 dyktige AI-spillere. Du kan velge mellom fri eller tvungen modus.">
+<meta name="author" content="Johnny Heggelund">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://morepcfun.github.io/yatzy/">
 <link rel="icon" href="data:image/png;base64,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">
-
 <style>
 :root {
 --bg-color: #1a1a2e;
@@ -117,22 +121,17 @@ color: var(--primary-color);
 border-top: 2px solid var(--primary-color);
 }
 @keyframes pulse-glow {
-    0% { box-shadow: 0 0 3px var(--highlight-color); }
-    50% { box-shadow: 0 0 12px 3px var(--highlight-color); }
-    100% { box-shadow: 0 0 3px var(--highlight-color); }
+0% { box-shadow: 0 0 3px var(--highlight-color); }
+50% { box-shadow: 0 0 12px 3px var(--highlight-color); }
+100% { box-shadow: 0 0 3px var(--highlight-color); }
 }
-
-/* Alle klikkbare ruter får hover-effekt */
 .score-cell.available:hover {
-    background-color: var(--secondary-color);
-    color: var(--highlight-color);
+background-color: var(--secondary-color);
+color: var(--highlight-color);
 }
-
-/* Kun ruter som er forslag får den pulserende effekten */
 .score-cell.suggestion {
-    animation: pulse-glow 2s infinite ease-in-out;
+animation: pulse-glow 2s infinite ease-in-out;
 }
-
 .control-panel {
 display: flex;
 flex-direction: column;
@@ -633,24 +632,21 @@ confirmBtn.style.display = 'none';
 document.querySelectorAll('.score-cell').forEach(cell => {
 const pIndex = parseInt(cell.dataset.player);
 const catId = cell.dataset.cat;
-// Nullstill klasser for forslag og tilgjengelighet
 cell.classList.remove('available', 'suggestion');
 if (pIndex === state.currentPlayerIndex && isHuman && state.phase === 'scoring' && state.players[pIndex].scores[catId] === null) {
-    if (state.gameMode === 'forced') {
-        if (getNextForcedCategory(pIndex) && getNextForcedCategory(pIndex).id === catId) {
-            cell.classList.add('available');
-            if (calculateScore(catId, state.dice) > 0) {
-                cell.classList.add('suggestion');
-            }
-        }
-    } else { // 'free' mode
-        // Alle tomme ruter er klikkbare (available) for strategisk plassering av null poeng
-        cell.classList.add('available');
-        // Men kun ruter som gir poeng får den pulserende 'suggestion'-effekten
-        if (calculateScore(catId, state.dice) > 0) {
-            cell.classList.add('suggestion');
-        }
-    }
+if (state.gameMode === 'forced') {
+if (getNextForcedCategory(pIndex) && getNextForcedCategory(pIndex).id === catId) {
+cell.classList.add('available');
+if (calculateScore(catId, state.dice) > 0) {
+cell.classList.add('suggestion');
+}
+}
+} else {
+cell.classList.add('available');
+if (calculateScore(catId, state.dice) > 0) {
+cell.classList.add('suggestion');
+}
+}
 }
 if (state.players[pIndex].scores[catId] !== null) {
 cell.classList.add('filled');
